@@ -14,13 +14,13 @@ multiplication = 320 == (10 * 32)
 
 -- | In what year did the Colourised version of Ivor the Engine first air?
 subtraction : Bool
-subtraction = 1977 - 1974.0 == 3
+subtraction = (1977 `minus` 1974) == 3
 
 -- | 26 B/W episodes of Ivor the Engine were discovered in a Pig shed
 -- in 2010. There were two seasons. How many episodes per season were
 -- there?
 division : Bool
-division = (26 / 13) == 2.0
+division = (26 `div` 13) == 2
 
 -- | There were 32 B/W episodes of ten minutes each, and 40 colour
 -- episodes of five minutes each. How many minutes of Ivor the Engine
