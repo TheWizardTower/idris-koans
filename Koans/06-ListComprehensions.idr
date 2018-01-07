@@ -2,28 +2,28 @@ module Koans.ListComprehensions
 
 -- | What is the result of the List Comprehension.
 listCompZero : Bool
-listCompZero = ?fillme1 == with Classes [ x + x | x <- [1..5] ]
+listCompZero = [2,4..10] == with Classes [ x + x | x <- [1..5] ]
 
 -- | Write a list comprehension that returns all the numbers divisible by four, doubled.
 myFirstListComp : List Integer -> List Integer
-myFirstListComp xs = ?fillme2
+myFirstListComp xs = [x * 2 | x <- xs, mod x 4 == 0]
 
 computeList : Bool
 computeList = myFirstListComp [1..10] == [8,16]
 
 -- | Return all the numbers between 20 and 100 that are divisible by 9.
 divisibleByNine : List Integer
-divisibleByNine = ?fillme3
+divisibleByNine = [x | x <- [20..100], mod x 9 == 0]
 
 -- | Using list comprehensions construct a function that turns a list of numbers into a list of strings.
 -- Odd numbers should be bang, Even numbers boom.
 boomBangs : List Integer -> List String
-boomBangs xs = ?fillme4
+boomBangs xs = [transform x | x <- xs]
                where
                  transform : Integer -> String
-                 transform = ?fillme5
+                 transform x = (case (mod x 2) of
+                                  0 => "boom"
+                                  1 => "bang")
 
 doBoomBangs : Bool
-doBoomBangs = boomBangs [3,4,5,6,7] == ["bang", "boom", "bang", "boom", "bang"]
-
-
+doBoomBangs = boomBangs [3,4,5,6,7] =

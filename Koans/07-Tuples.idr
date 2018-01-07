@@ -1,24 +1,26 @@
 module Koans.Tuples
 
+import Data.Vect
+
 -- Complete the following functions
 
 firstPair : Bool
-firstPair = ?fillme1 == fst ("First", "Pair")
+firstPair = "First" == fst ("First", "Pair")
 
 secondPair : Bool
-secondPair = ?fillme2 == snd ("Second", "Pair")
+secondPair = "Pair" == snd ("Second", "Pair")
 
 whatAmI : Vect 5 (Int, Bool)
-whatAmI = ?fillme3
+whatAmI = fromList [(x, mod x 2 == 0) | x <- [1..5]]
 
 ws : Vect 5 String
 ws = ["zip", "a", "dee", "doo", "dah"]
 
 is : Vect 5 Int
-is = ?fillme4
+is = fromList [1..5]
 
 myFirstZip : Bool
-myFirstZip = zip ws is == ?fillme5
+myFirstZip = zip ws is == [("zip", 1), ("a", 2), ("dee", 3), ("doo", 4), ("dah", 5)]
 
 whatIsMyResult : Bool
-whatIsMyResult = ?fillme6 == Vect.zipWith (+) is is
+whatIsMyResult = fromList [2,4..10] == Vect.zipWith (+) is is
