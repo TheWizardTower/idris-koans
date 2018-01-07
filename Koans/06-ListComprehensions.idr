@@ -22,8 +22,11 @@ boomBangs xs = [transform x | x <- xs]
                where
                  transform : Integer -> String
                  transform x = (case (mod x 2) of
-                                  0 => "boom"
-                                  1 => "bang")
+                                  0 => "bang"
+                                  1 => "boom"
+                                  )
 
 doBoomBangs : Bool
-doBoomBangs = boomBangs [3,4,5,6,7] =
+doBoomBangs = boomBangs [3,4,5,6,7] == ["bang", "boom", "bang", "boom", "bang"]
+
+
